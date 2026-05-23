@@ -1,0 +1,125 @@
+[audio]
+enable_sounds = true
+
+[bar]
+order = [ "main" ]
+
+    [bar.main]
+    center = [ "media", "bongocat" ]
+    color = "tertiary"
+    enabled = true
+    end = [
+        "tray",
+        "notifications",
+        "clipboard",
+        "network",
+        "bluetooth",
+        "volume",
+        "brightness",
+        "battery",
+        "clock",
+        "control-center",
+        "session",
+        "wallpaper"
+    ]
+    font_weight = 600
+    shadow = false
+    start = [ "launcher", "workspaces", "cpu", "ram", "temp" ]
+
+[desktop_widgets]
+enabled = false
+schema_version = 1
+widget_order = [ "desktop-widget-0000000000000001" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    cx = 1763.5
+    cy = 48.5
+    output = "HDMI-A-1"
+    rotation = 0.0
+    scale = 1.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        color = "tertiary"
+        shadow = false
+
+[shell]
+corner_radius_scale = 2.0
+polkit_agent = true
+screen_time_enabled = true
+settings_show_advanced = true
+telemetry_enabled = false
+
+    [shell.animation]
+    speed = 2.0
+
+    [shell.panel]
+    borders = false
+    control_center_placement = "floating"
+    open_near_click_control_center = true
+    open_near_click_wallpaper = true
+    shadow = false
+    wallpaper_placement = "centered"
+
+    [shell.screen_corners]
+    size = 100
+
+[theme]
+community_palette = "Rosey AMOLED"
+
+    [theme.templates]
+    builtin_ids = [ "starship", "gtk3", "gtk4", "btop", "kitty", "niri", "qt" ]
+    community_ids = [ "spicetify", "vscode", "discord", "steam", "yazi", "zen-browser" ]
+
+[wallpaper]
+directory = "/home/koris/Pictures/Wallpapers"
+transition = [ "disc", "fade", "honeycomb", "stripes", "wipe", "zoom" ]
+
+    [wallpaper.default]
+    path = "/home/koris/Pictures/Wallpapers/default.png"
+
+    [wallpaper.last]
+    path = "/home/koris/Pictures/Wallpapers/default.png"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/koris/Pictures/Wallpapers/default.png"
+
+[weather]
+auto_locate = true
+
+[widget.bongocat]
+script = "scripts/bongocat.lua"
+type = "scripted"
+
+[widget.clock]
+color = "secondary"
+
+[widget.control-center]
+glyph = "home-filled"
+
+[widget.launcher]
+color = "tertiary"
+
+[widget.media]
+anchor = true
+art_size = 53.0
+color = "primary"
+hide_when_no_media = true
+max_length = 459.0
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.tray]
+color = "secondary"
+drawer = true
+
+[widget.volume]
+show_label = false

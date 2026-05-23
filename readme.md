@@ -1,0 +1,3 @@
+## Under construction...
+
+Just my NixOS config and dotfiles
