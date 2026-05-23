@@ -1,0 +1,19 @@
+{
+  config,
+  pkgs,
+  userName,
+  homeDirectory,
+  ...
+}:
+{
+  fonts.packages = with pkgs; [
+    noto-fonts-color-emoji
+    fira-sans
+    roboto
+    noto-fonts-cjk-sans
+    font-awesome
+    material-icons
+    victor-mono
+    nerd-fonts.victor-mono
+  ];
+}

@@ -70,6 +70,7 @@
     # Audio and video
     pavucontrol
     ffmpeg
+    audacity
 
     # Image and graphics
     papirus-icon-theme
@@ -144,17 +145,6 @@
     xdg-desktop-portal-gtk
   ];
 
-  fonts.packages = with pkgs; [
-    noto-fonts-color-emoji
-    fira-sans
-    roboto
-    noto-fonts-cjk-sans
-    font-awesome
-    material-icons
-    victor-mono
-    nerd-fonts.victor-mono
-  ];
-
   xdg.portal = {
     enable = true;
     extraPortals = [
@@ -165,26 +155,5 @@
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal
     ];
-  };
-
- 
-
-  drivers.nvidia.enable = true;
-
-  hardware = {
-    sane = {
-      enable = true;
-      extraBackends = [ pkgs.sane-airscan ];
-      disabledDefaultBackends = [ "escl" ];
-    };
-    logitech.wireless = {
-      enable = true;
-      enableGraphical = true;
-    };
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
-    graphics.enable = true;
-  };
+  };  
 }

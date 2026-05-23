@@ -27,7 +27,6 @@
         })
       '';
     };
-    pam.services.login.enableGnomeKeyring;
-    # pam.services.swaylock.text = "auth include login";
+    pam.services.login.enableGnomeKeyring = true;
   };
 }

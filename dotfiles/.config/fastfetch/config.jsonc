@@ -1,117 +1,88 @@
+// Inspired by Catnap
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-    	"source": "~/.config/fastfetch/images/img4.png",
-    	"type": "kitty-direct",
-        "width": 20,
-    	"padding": {
-    		"top": 10,
-            "left": 4
-    	}
+        "type": "small"
     },
     "display": {
-        "separator": " "
+        "separator": "",
+        "key": {
+            "width": 15
+        }
     },
     "modules": [
-	"break",
-        "break",
-        "break",
-	{
-            "type": "custom",
-            "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  "
-        },
-	"break",
-	{
+        {
+            // draw borders first to make colors of left and right border consistant
+            "key": " user",
             "type": "title",
-            "keyWidth": 10
-        },
-        "break",
-        {
-            "type": "os",
-            "key": " ",
-            "keyColor": "34",  // = color4
+            "format": "{user-name}",
+            "keyColor": "31"
         },
         {
-            "type": "kernel",
-            "key": " ",
-            "keyColor": "34",
+            "key": "󰇅 hname",
+            "type": "title",
+            "format": "{host-name}",
+            "keyColor": "32"
+
         },
         {
-            "type": "packages",
-            // "format": "{} (pacman)",
-            "key": " ",
-            "keyColor": "34",  
-        },
-        {
-            "type": "shell",
-            "key": " ",
-            "keyColor": "34", },
-        "break",
-        // {
-        //     "type": "terminal",
-        //     "key": " ",
-        //     "keyColor": "34", 
-        // },
-        {
-            "type": "wm",
-            "key": " ",
-            "keyColor": "34", 
-        },
-        // {
-        //     "type": "cursor",
-        //     "key": " ",
-        //     "keyColor": "34", 
-        // },
-        // {
-        //     "type": "terminalfont",
-        //     "key": " ",
-        //     "keyColor": "34", 
-        // },
-        {
+            "key": "󰅐 uptime",
             "type": "uptime",
-            "key": " ",
-            "keyColor": "34", 
+            "keyColor": "33"
         },
         {
-            "type": "command",
-            "key": "󱦟 ",
-            "keyColor": "34",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+            "key": "{icon} distro",
+            "type": "os",
+            "keyColor": "34"
         },
-        // {
-        //     "type": "datetime",
-        //     "format": "{1}-{3}-{11}",
-        //     "key": " ",
-        //     "keyColor": "34", 
-        // },
         {
-            "type": "media",
-            "key": "󰝚 ",
-            "keyColor": "34", 
+            "key": " kernel",
+            "type": "kernel",
+            "keyColor": "35"
         },
-        // "break",
-        "break",
         {
+            "key": "󰇄 desktop",
+            "type": "de",
+            "keyColor": "36"
+        },
+        {
+            "key": " term",
+            "type": "terminal",
+            "keyColor": "31"
+        },
+        {
+            "key": " shell",
+            "type": "shell",
+            "keyColor": "32"
+        },
+        {
+            "key": "󰍛 cpu",
             "type": "cpu",
-            "key": " ",
-            "keyColor": "blue"
+            "showPeCoreCount": true,
+            "keyColor": "33"
         },
         {
-            "type": "gpu",
-            "key": " ",
-            "keyColor": "blue"
+            "key": "󰉉 disk",
+            "type": "disk",
+            "folders": "/",
+            "keyColor": "34"
         },
         {
+            "key": " memory",
             "type": "memory",
-            "key": " ",
-            "keyColor": "blue"
+            "keyColor": "35"
         },
-        "break",
         {
-            "type": "custom",
-            "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m "
+            "key": "󰩟 network",
+            "type": "localip",
+            "format": "{ipv4} ({ifname})",
+            "keyColor": "36"
         },
-        "break",
-        "break",
+        {
+            "key": " colors",
+            "type": "colors",
+            "symbol": "circle",
+            "keyColor": "39"
+        }
     ]
 }

@@ -36,7 +36,6 @@ in
       # Individual config files
       ".config/kwalletrc".source = ./dotfiles/.config/kwalletrc;
       ".config/starship/starship.toml".source = ./dotfiles/.config/starship/starship.toml;
-      ".config/starship/powerline.toml".source = ./dotfiles/.config/starship/powerline.toml;
     };
 
     sessionVariables = {
@@ -71,6 +70,9 @@ in
 
       # Localization
       LC_ALL = "en_US.UTF-8";
+
+      # Misc
+      STARSHIP_CONFIG = "$HOME/.config/starship/starship.toml";
     };
 
     sessionPath = [

@@ -58,12 +58,17 @@
           ./noctalia.nix
           ./networking.nix
           ./boot.nix
-          ./packages.nix
+          ./system-packages.nix
           ./services.nix
           ./security.nix
           ./style.nix
           ./default-applications.nix
           ./user.nix
+          ./hardware.nix
+          ./fonts.nix
+          ./nix-config.nix
+          ./modules/nvidia-drivers.nix
+          ./hardware-configuration.nix
         ];
       };
     };

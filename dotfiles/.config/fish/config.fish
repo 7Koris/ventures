@@ -8,6 +8,12 @@ if type -q starship
     set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 end
 
+# if type -q starship
+#     starship init fish | source
+#     set -gx STARSHIP_CACHE $HOME/.cache/starship
+#     set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
+# end
+
 
 if type -q duf
     function df -d "Run duf with last argument if valid, else run duf"

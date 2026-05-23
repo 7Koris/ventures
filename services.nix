@@ -16,7 +16,6 @@
       };
       videoDrivers = [ "nvidia" ];
     };
-
     displayManager.ly = {
       enable = true;
       settings = {
@@ -24,13 +23,11 @@
         animation = "colormix";
       };
     };
-
     logind = {
       settings.Login = {
         HandlePowerKey = "suspend";
       };
     };
-
     cron = {
       enable = true;
     };
@@ -39,7 +36,6 @@
     fstrim.enable = true;
     gvfs.enable = true;
     openssh.enable = true;
-
     printing = {
       enable = true;
       drivers = [ pkgs.hplipWithPlugin ];

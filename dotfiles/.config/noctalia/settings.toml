@@ -18,13 +18,12 @@ order = [ "main" ]
         "brightness",
         "battery",
         "clock",
-        "control-center",
-        "session",
-        "wallpaper"
+        "session"
     ]
     font_weight = 600
+    margin_edge = 4
     shadow = false
-    start = [ "launcher", "workspaces", "cpu", "ram", "temp" ]
+    start = [ "launcher", "control-center", "wallpaper", "workspaces" ]
 
 [desktop_widgets]
 enabled = false
