@@ -10,7 +10,7 @@
   ...
 }:
 {
-  home-manager.users.koris = {
+  home-manager.users.${userName}= {
     imports = [
       inputs.noctalia.homeModules.default
     ];

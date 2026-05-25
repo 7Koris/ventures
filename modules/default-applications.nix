@@ -22,14 +22,39 @@
     "inode/directory" = "org.kde.nemo.desktop";
 
     # Text editor
-    "text/plain" = "nvim.desktop";
+    "text/plain" = "vim.desktop";
 
     # Terminal
     "x-scheme-handler/terminal" = "kitty.desktop";
+    
+    # GitHub Desktop protocol handlers
+    "x-scheme-handler/x-github-desktop-auth" = "github-desktop.desktop";
+    "x-scheme-handler/x-github-desktop-dev-auth" = "github-desktop.desktop";
+    "x-scheme-handler/x-github-client" = "github-desktop.desktop";
 
     # Videos
-    "video/quicktime" = "mpv-2.desktop";
-    "video/x-matroska" = "mpv-2.desktop";
+    "video/quicktime" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/x-matroska" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/mp4" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/x-msvideo" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/x-ms-wmv" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/webm" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/mpeg" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/x-flv" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/3gpp" = "io.github.celluloid_player.Celluloid.desktop";
+    "video/ogg" = "io.github.celluloid_player.Celluloid.desktop";
+
+    # Audio
+    "audio/mpeg" = "io.github.celluloid_player.Celluloid.desktop";
+    "audio/mp4" = "io.github.celluloid_player.Celluloid.desktop";
+    "audio/ogg" = "io.github.celluloid_player.Celluloid.desktop";
+    "audio/flac" = "io.github.celluloid_player.Celluloid.desktop";
+    "audio/wav" = "io.github.celluloid_player.Celluloid.desktop";
+    "audio/x-wav" = "io.github.celluloid_player.Celluloid.desktop";
+    "audio/webm" = "io.github.celluloid_player.Celluloid.desktop";
+    "audio/x-matroska" = "io.github.celluloid_player.Celluloid.desktop";
+    "audio/aac" = "io.github.celluloid_player.Celluloid.desktop";
+    "audio/opus" = "io.github.celluloid_player.Celluloid.desktop";
 
     #     # LibreOffice formats
     #     "application/vnd.oasis.opendocument.text" = "libreoffice-writer.desktop";
@@ -54,7 +79,5 @@
     # Other handlers
     "x-scheme-handler/about" = "firefox.desktop";
     "x-scheme-handler/unknown" = "firefox.desktop";
-    #     "x-scheme-handler/postman" = "Postman.desktop";
-    #     "x-scheme-handler/tonsite" = "org.telegram.desktop.desktop";
   };
 }

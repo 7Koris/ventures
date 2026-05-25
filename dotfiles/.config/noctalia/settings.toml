@@ -5,7 +5,9 @@ enable_sounds = true
 order = [ "main" ]
 
     [bar.main]
-    center = [ "media", "bongocat" ]
+    background_opacity = 0.0
+    capsule_groups = [ "left", "right" ]
+    center = [ "audio_visualizer" ]
     color = "tertiary"
     enabled = true
     end = [
@@ -22,6 +24,7 @@ order = [ "main" ]
     ]
     font_weight = 600
     margin_edge = 4
+    scale = 1.25
     shadow = false
     start = [ "launcher", "control-center", "wallpaper", "workspaces" ]
 
@@ -71,54 +74,89 @@ telemetry_enabled = false
 
 [theme]
 community_palette = "Rosey AMOLED"
+mode = "dark"
 
     [theme.templates]
     builtin_ids = [ "starship", "gtk3", "gtk4", "btop", "kitty", "niri", "qt" ]
     community_ids = [ "spicetify", "vscode", "discord", "steam", "yazi", "zen-browser" ]
 
 [wallpaper]
-directory = "/home/koris/Pictures/Wallpapers"
+directory = "/home/user/Pictures/Wallpapers"
 transition = [ "disc", "fade", "honeycomb", "stripes", "wipe", "zoom" ]
 
     [wallpaper.default]
-    path = "/home/koris/Pictures/Wallpapers/default.png"
+    path = "/home/user/Pictures/Wallpapers/default.png"
 
     [wallpaper.last]
-    path = "/home/koris/Pictures/Wallpapers/default.png"
+    path = "/home/user/Pictures/Wallpapers/default.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/koris/Pictures/Wallpapers/default.png"
+    path = "/home/user/Pictures/Wallpapers/default.png"
 
 [weather]
 auto_locate = true
+
+[widget.audio_visualizer]
+anchor = true
+bands = 46
+high_color = "tertiary"
+width = 400.0
+
+[widget.battery]
+capsule_group = "right"
+
+[widget.bluetooth]
+capsule_group = "right"
 
 [widget.bongocat]
 script = "scripts/bongocat.lua"
 type = "scripted"
 
+[widget.brightness]
+capsule_group = "right"
+
+[widget.clipboard]
+capsule_group = "right"
+
 [widget.clock]
+capsule_group = "right"
 color = "secondary"
 
 [widget.control-center]
+capsule_group = "left"
 glyph = "home-filled"
 
 [widget.launcher]
+capsule_group = "left"
 color = "tertiary"
 
 [widget.media]
-anchor = true
 art_size = 53.0
 color = "primary"
-hide_when_no_media = true
-max_length = 459.0
+max_length = 282.0
 title_scroll = "on_hover"
 
 [widget.network]
+capsule_group = "right"
 show_label = false
 
+[widget.notifications]
+capsule_group = "right"
+
+[widget.session]
+capsule_group = "right"
+
 [widget.tray]
+capsule_group = "right"
 color = "secondary"
 drawer = true
 
 [widget.volume]
+capsule_group = "right"
 show_label = false
+
+[widget.wallpaper]
+capsule_group = "left"
+
+[widget.workspaces]
+capsule_group = "left"

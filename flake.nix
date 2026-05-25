@@ -1,5 +1,5 @@
 {
-  description = "Koris flake";
+  description = "Ventures flake";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
@@ -30,7 +30,7 @@
       homeDirectory = "/home/${userName}";
       userDescription = "";
       system = "x86_64-linux";
-      hostName = "mangata";
+      hostName = "ventures";
       timeZone = "US/Pacific";
       pkgs = import nixpkgs {
         inherit system;
@@ -38,7 +38,7 @@
       };
     in
     {
-      nixosConfigurations.mangata = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit
@@ -52,23 +52,29 @@
             ;
         };
         modules = [
-          ./configuration.nix
+          ./modules/configuration.nix
           inputs.home-manager.nixosModules.default
           stylix.nixosModules.stylix
-          ./noctalia.nix
-          ./networking.nix
-          ./boot.nix
-          ./system-packages.nix
-          ./services.nix
-          ./security.nix
-          ./style.nix
-          ./default-applications.nix
-          ./user.nix
-          ./hardware.nix
-          ./fonts.nix
-          ./nix-config.nix
+          ./modules/noctalia.nix
+          ./modules/networking.nix
+          ./modules/boot.nix
+          ./modules/system-packages.nix
+          ./modules/services.nix
+          ./modules/security.nix
+          ./modules/style.nix
+          ./modules/default-applications.nix
+          ./modules/user.nix
+          ./modules/hardware.nix
+          ./modules/fonts.nix
+          ./modules/nix-config.nix
+          ./modules/hardware-configuration.nix
+          ./modules/vm-guest-services.nix
+
+          # Drivers (change for your system)
           ./modules/nvidia-drivers.nix
-          ./hardware-configuration.nix
+          # ./nvidia-prime-drivers.nix # uncomment for laptop
+          #./intel-drivers.nix
+          #./amd-drivers.nix
         ];
       };
     };

@@ -23,10 +23,14 @@
         "input"
         "video"
         "docker"
+        "libvirtd"
+        "kvm"
+        "qemu-libvirtd"
       ];
       packages = with pkgs; [
         firefox
       ];
+      shell = pkgs.fish;
     };
   };
 }

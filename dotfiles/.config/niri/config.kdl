@@ -165,21 +165,21 @@ layout {
     }
 
     // You can enable drop shadows for windows.
-    shadow {
-        // Uncomment the next line to enable shadows.
-        on
-        // Softness controls the shadow blur radius.
-        softness 30
+    // shadow {
+    //     // Uncomment the next line to enable shadows.
+    //     off
+    //     // Softness controls the shadow blur radius.
+    //     softness 30
 
-        // Spread expands the shadow.
-        spread 5
+    //     // Spread expands the shadow.
+    //     spread 5
 
-        // Offset moves the shadow relative to the window.
-        offset x=0 y=5
+    //     // Offset moves the shadow relative to the window.
+    //     offset x=0 y=5
 
-        // You can also change the shadow color and opacity.
-        color "#0007"
-    }
+    //     // You can also change the shadow color and opacity.
+    //     color "#0007"
+    // }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // You can think of them as a kind of outer gaps. They are set in logical pixels.
@@ -257,6 +257,17 @@ window-rule {
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+layer-rule {
+    match namespace="^noctalia-bar*"
+    block-out-from "screen-capture"
+}
+layer-rule {
+    match namespace="^noctalia-bar*"
+    background-effect {
+        blur false
+    }
 }
 
 // Example: block out two password managers from screen capture.

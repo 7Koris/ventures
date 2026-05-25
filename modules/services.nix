@@ -79,4 +79,12 @@
       wireplumber.enable = true;
     };
   };
+
+  # systemd.services = {
+  #   libvirtd = {
+  #     enable = true;
+  #     wantedBy = [ "multi-user.target" ];
+  #     requires = [ "virtlogd.service" ];
+  #   };
+  # };
 }

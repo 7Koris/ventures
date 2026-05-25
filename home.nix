@@ -11,6 +11,11 @@ let
   stateVersion = "24.05";
 in
 {
+  imports = [
+    # For home-manager
+    inputs.spicetify-nix.homeManagerModules.default
+  ];
+
   home = {
     username = userName;
     homeDirectory = homeDirectory;
@@ -19,23 +24,39 @@ in
     file = {
 
       # Top Level Files symlinks
-      ".local/state/noctalia/settings.toml".source = ./dotfiles/.config/noctalia/settings.toml;
+      ".local/state/noctalia/settings.toml" = {
+        source = pkgs.runCommand "settings.toml" { } ''
+          substitute ${./dotfiles/.config/noctalia/settings.toml} $out \
+            --replace-fail "/home/user" "${homeDirectory}"
+        '';
+        force = true;
+      };
       ".config/niri/config.kdl".source = ./dotfiles/.config/niri/config.kdl;
       ".config/fish/config.fish".source = ./dotfiles/.config/fish/config.fish;
       #".gitconfig".source = ./dotfiles/.gitconfig;
+      ".config/mommy/config.sh".source = ./dotfiles/.config/mommy/config.sh;
       ".ideavimrc".source = ./dotfiles/.ideavimrc;
       ".nirc".source = ./dotfiles/.nirc;
-      "Pictures/Wallpapers".source = ./assets/Wallpapers;
-      "Pictures/Logos".source = ./assets/logos;
 
       # Config directories
       ".config/fastfetch".source = ./dotfiles/.config/fastfetch;
       ".config/kitty".source = ./dotfiles/.config/kitty;
       ".config/tmux/tmux.conf".source = ./dotfiles/.config/tmux/tmux.conf;
+      "Pictures/Wallpapers".source = ./assets/Wallpapers;
+      "Pictures/Logos".source = ./assets/logos;
 
       # Individual config files
       ".config/kwalletrc".source = ./dotfiles/.config/kwalletrc;
       ".config/starship/starship.toml".source = ./dotfiles/.config/starship/starship.toml;
+
+      ".local/share/applications/github-desktop-handler.desktop".text = ''
+        [Desktop Entry]
+        Name=GitHub Desktop URL Handler
+        Exec=github-desktop %u
+        Type=Application
+        NoDisplay=true
+        MimeType=x-scheme-handler/x-github-desktop-auth;x-scheme-handler/x-github-desktop-dev-auth;x-scheme-handler/x-github-client;
+      '';
     };
 
     sessionVariables = {
@@ -63,7 +84,6 @@ in
       GTK_USE_PORTAL = "1";
       NIXOS_XDG_OPEN_USE_PORTAL = "1";
 
-
       # NVIDIA specific
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       GBM_BACKEND = "nvidia-drm";
@@ -81,11 +101,6 @@ in
     ];
 
   };
-
-  imports = [
-    # For home-manager
-    inputs.spicetify-nix.homeManagerModules.default
-  ];
 
   programs.spicetify =
     let
@@ -121,6 +136,9 @@ in
       gtk-application-prefer-dark-theme = 1;
     };
   };
+
+  xdg.configFile."gtk-3.0/gtk.css".force = true;
+  xdg.configFile."gtk-4.0/gtk.css".force = true;
 
   programs.home-manager.enable = true;
 }

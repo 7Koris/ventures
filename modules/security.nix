@@ -8,6 +8,7 @@
 {
   security = {
     rtkit.enable = true;
+    sudo.package = pkgs.sudo.override { withInsults = true; };
     polkit = {
       enable = true;
       extraConfig = ''

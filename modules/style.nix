@@ -8,6 +8,7 @@
 {
   stylix = {
     enable = true;
+    targets.gtk.enable = true;
     # TODO: Better color management? see below
     # If you change your color scheme in noctalia, the UI color scheme won't match stylix.
     # Currently, you must change the base16Scheme here and rebuild to match theme
@@ -20,8 +21,8 @@
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.victor-mono;
-        name = "VictorMono Nerd Font Mono";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
         package = pkgs.montserrat;
@@ -31,9 +32,22 @@
         package = pkgs.montserrat;
         name = "Montserrat";
       };
+      # serif = {
+      #   package = pkgs.dejavu_fonts;
+      #   name = "DejaVu Serif";
+      # };
+
+      # sansSerif = {
+      #   package = pkgs.dejavu_fonts;
+      #   name = "DejaVu Sans";
+      # };
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
+      };
       sizes = {
         applications = 12;
-        terminal = 9;
+        terminal = 12;
         desktop = 11;
         popups = 12;
       };

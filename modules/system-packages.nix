@@ -20,6 +20,9 @@
     gcc
     openssl
     godot
+    lazygit
+    #git-cola
+    #gitbutler
     github-desktop
 
     # Version control and development tools
@@ -31,6 +34,10 @@
     nixfmt-tree
 
     # Shell and terminal utilities
+    tldr
+    jq
+    meow
+    mommy
     lsd
     vim
     neovim
@@ -68,6 +75,9 @@
     aria2
 
     # Audio and video
+    celluloid
+    mpv
+    vlc
     pavucontrol
     ffmpeg
     audacity
@@ -78,6 +88,15 @@
     imagemagick
     gimp
     imv
+
+    # Virtualization
+    libvirt
+    qemu
+    virt-manager
+    spice
+    spice-gtk
+    spice-protocol
+    OVMF
 
     # Productivity and office
     obsidian
@@ -93,6 +112,7 @@
     # steam
 
     # System utilities
+    virt-viewer
     xwayland-satellite
     libgcc
     bc

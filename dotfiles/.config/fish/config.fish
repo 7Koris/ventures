@@ -70,9 +70,14 @@ alias fastfetch='fastfetch --logo-type kitty'
 
 function purr
 	begin
-        	meow
-        	curl -s https://catfact.ninja/fact | jq -r '.fact'
+        meow
+        curl -s https://catfact.ninja/fact | jq -r '.fact'
 	end | lolcat
+end
+
+# ~/.config/fish/functions/fish_right_prompt.fish
+function fish_right_prompt
+    mommy -1 -s $status
 end
 
 # Directory navigation shortcuts
@@ -85,10 +90,20 @@ alias .5='cd ../../../../..'
 abbr mkdir 'mkdir -p'
 
 # Custom
-
-abbr godot '/home/koris/Bin/Godot'
 alias ls lsd
 # alias cd cdv
-fastfetch --logo ~/Pictures/Logos/starrycat.jpg
 
-fish_add_path /home/koris/.spicetify
+# uncomment for cat logo
+# if test "$TERM" = "xterm-kitty"
+#     fastfetch --logo-type file-raw --logo-position top --logo ~/Pictures/Logos/cat_love.txt
+# end
+
+# if test "$TERM" = "xterm-kitty"
+#     fastfetch --logo ~/Pictures/Logos/starry_cat.jpg
+# end
+
+if test "$TERM" = "xterm-kitty"
+    fastfetch --logo ~/Pictures/Logos/ventures.png --logo-padding-top 1   
+end
+
+fish_add_path /home/$USER/.spicetify

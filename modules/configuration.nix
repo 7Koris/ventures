@@ -38,6 +38,14 @@
     docker = {
       enable = true;
     };
+    libvirtd = {
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        runAsRoot = true;
+      };
+    };
+    spiceUSBRedirection.enable = true;
   };
 
   programs = {
@@ -68,10 +76,10 @@
         timeZone
         ;
     };
-    users.${userName} = import ./home.nix;
+    users.${userName} = import ../home.nix;
     useGlobalPkgs = true;
     useUserPackages = true;
-    backupFileExtension = "backup";
+    backupFileExtension = "hm-backup";
   };
 
   drivers.nvidia.enable = true;
