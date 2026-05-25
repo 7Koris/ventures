@@ -103,7 +103,7 @@ alias ls lsd
 # end
 
 if test "$TERM" = "xterm-kitty"
-    fastfetch --logo ~/Pictures/Logos/ventures.png --logo-padding-top 1   
+    fastfetch --logo ~/Pictures/Logos/ventures.png --logo-padding-top 1 --logo-padding-left 2
 end
 
 fish_add_path /home/$USER/.spicetify

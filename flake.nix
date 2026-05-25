@@ -10,6 +10,7 @@
     };
     niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
+    gitbutler-binary.url = "github:youwen5/gitbutler-flake";
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell/v5";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +24,7 @@
       spicetify-nix,
       stylix,
       niri,
+      gitbutler-binary,
       ...
     }@inputs:
     let
@@ -43,6 +45,7 @@
         specialArgs = {
           inherit
             inputs
+            gitbutler-binary
             userName
             homeDirectory
             userDescription
@@ -52,9 +55,9 @@
             ;
         };
         modules = [
-          ./modules/configuration.nix
           inputs.home-manager.nixosModules.default
           stylix.nixosModules.stylix
+          ./modules/configuration.nix
           ./modules/noctalia.nix
           ./modules/networking.nix
           ./modules/boot.nix

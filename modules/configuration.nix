@@ -48,6 +48,9 @@
     spiceUSBRedirection.enable = true;
   };
 
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
+
   programs = {
     fish.enable = true;
     niri.enable = true;

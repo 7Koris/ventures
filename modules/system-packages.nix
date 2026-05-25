@@ -3,10 +3,13 @@
   pkgs,
   userName,
   homeDirectory,
+  gitbutler-binary,
   ...
 }:
 {
   environment.systemPackages = with pkgs; [
+    gitbutler-binary.packages.${pkgs.stdenv.hostPlatform.system}.default
+
     # Text editors and IDEs
     nano
     vscode
@@ -20,18 +23,19 @@
     gcc
     openssl
     godot
-    lazygit
-    #git-cola
-    #gitbutler
-    github-desktop
+    
 
     # Version control and development tools
-    git
+    #git
+    gitFull
     gh
     gnumake
     coreutils
     nixfmt
     nixfmt-tree
+
+    lazygit
+    #gitbutler
 
     # Shell and terminal utilities
     tldr
