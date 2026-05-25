@@ -27,7 +27,7 @@ in
       ".local/state/noctalia/settings.toml" = {
         source = pkgs.runCommand "settings.toml" { } ''
           substitute ${./dotfiles/.config/noctalia/settings.toml} $out \
-            --replace-fail "/home/user" "${homeDirectory}"
+            --replace-fail "/home/koris" "${homeDirectory}"
         '';
         force = true;
       };

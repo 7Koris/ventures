@@ -10,20 +10,11 @@ order = [ "main" ]
     center = [ "audio_visualizer" ]
     color = "tertiary"
     enabled = true
-    end = [
-        "tray",
-        "notifications",
-        "clipboard",
-        "network",
-        "bluetooth",
-        "volume",
-        "brightness",
-        "battery",
-        "clock",
-        "session"
-    ]
+    end = [ "tray", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "clock" ]
     font_weight = 600
     margin_edge = 4
+    margin_ends = 0
+    position = "bottom"
     scale = 1.25
     shadow = false
     start = [ "launcher", "control-center", "wallpaper", "workspaces" ]
@@ -81,17 +72,17 @@ mode = "dark"
     community_ids = [ "spicetify", "vscode", "discord", "steam", "yazi", "zen-browser" ]
 
 [wallpaper]
-directory = "/home/user/Pictures/Wallpapers"
+directory = "/home/koris/Pictures/Wallpapers"
 transition = [ "disc", "fade", "honeycomb", "stripes", "wipe", "zoom" ]
 
     [wallpaper.default]
-    path = "/home/user/Pictures/Wallpapers/default.png"
+    path = "/home/koris/Pictures/Wallpapers/default.png"
 
     [wallpaper.last]
-    path = "/home/user/Pictures/Wallpapers/default.png"
+    path = "/home/koris/Pictures/Wallpapers/default.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/user/Pictures/Wallpapers/default.png"
+    path = "/home/koris/Pictures/Wallpapers/default.png"
 
 [weather]
 auto_locate = true

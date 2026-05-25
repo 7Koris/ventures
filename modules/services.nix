@@ -31,6 +31,7 @@
     cron = {
       enable = true;
     };
+    flatpak.enable = true;
     libinput.enable = true;
     upower.enable = true;
     fstrim.enable = true;
@@ -80,11 +81,18 @@
     };
   };
 
-  # systemd.services = {
-  #   libvirtd = {
-  #     enable = true;
-  #     wantedBy = [ "multi-user.target" ];
-  #     requires = [ "virtlogd.service" ];
-  #   };
-  # };
+  systemd.services = {
+    # libvirtd = {
+    #   enable = true;
+    #   wantedBy = [ "multi-user.target" ];
+    #   requires = [ "virtlogd.service" ];
+    # };
+    flatpak-repo = {
+      path = [ pkgs.flatpak ];
+      script = ''
+        flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+        flatpak install -y flathub com.github.GithubDesktop
+      '';
+    };
+  };
 }

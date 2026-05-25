@@ -75,10 +75,12 @@ function purr
 	end | lolcat
 end
 
-# ~/.config/fish/functions/fish_right_prompt.fish
-function fish_right_prompt
-    mommy -1 -s $status
-end
+
+# Uncomment if you're so inclined
+# # ~/.config/fish/functions/fish_right_prompt.fish
+# function fish_right_prompt
+#     mommy -1 -s $status
+# end
 
 # Directory navigation shortcuts
 alias ..='cd ..'
@@ -103,7 +105,7 @@ alias ls lsd
 # end
 
 if test "$TERM" = "xterm-kitty"
-    fastfetch --logo ~/Pictures/Logos/ventures.png --logo-padding-top 1   
+    fastfetch --logo ~/Pictures/Logos/ventures.png --logo-padding-top 1 --logo-padding-left 2
 end
 
 fish_add_path /home/$USER/.spicetify

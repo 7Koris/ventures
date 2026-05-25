@@ -21,9 +21,6 @@
     openssl
     godot
     lazygit
-    #git-cola
-    #gitbutler
-    github-desktop
 
     # Version control and development tools
     git
