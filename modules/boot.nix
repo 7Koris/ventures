@@ -18,9 +18,10 @@
       "i915.enable_psr=1" # Panel self refresh
       "i915.enable_fbc=1" # Framebuffer compression
       "i915.enable_dc=2" # Display power saving
-      "nvme.noacpi=1" # Helps with NVME power consumption
+      # "nvme.noacpi=1"
       "nvidia-drm.modeset=1"
-      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+      # "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+      "pcie_aspm=off"
     ];
     loader = {
       efi = {

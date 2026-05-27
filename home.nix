@@ -31,6 +31,7 @@ in
         '';
         force = true;
       };
+
       ".config/niri/config.kdl".source = ./dotfiles/.config/niri/config.kdl;
       ".config/fish/config.fish".source = ./dotfiles/.config/fish/config.fish;
       #".gitconfig".source = ./dotfiles/.gitconfig;
@@ -44,6 +45,7 @@ in
       ".config/tmux/tmux.conf".source = ./dotfiles/.config/tmux/tmux.conf;
       "Pictures/Wallpapers".source = ./assets/Wallpapers;
       "Pictures/Logos".source = ./assets/logos;
+      "Music/Ambient".source = ./assets/sound;
 
       # Individual config files
       ".config/kwalletrc".source = ./dotfiles/.config/kwalletrc;

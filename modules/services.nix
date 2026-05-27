@@ -76,17 +76,18 @@
         support32Bit = true;
       };
       pulse.enable = true;
-      jack.enable = true;
+      #jack.enable = true;
       wireplumber.enable = true;
     };
   };
 
   systemd.services = {
-    # libvirtd = {
-    #   enable = true;
-    #   wantedBy = [ "multi-user.target" ];
-    #   requires = [ "virtlogd.service" ];
-    # };
+    libvirtd = {
+      enable = true;
+      wantedBy = [ "multi-user.target" ];
+      requires = [ "virtlogd.service" ];
+    };
+
     flatpak-repo = {
       path = [ pkgs.flatpak ];
       script = ''
@@ -94,5 +95,6 @@
         flatpak install -y flathub com.github.GithubDesktop
       '';
     };
+    
   };
 }

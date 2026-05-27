@@ -17,10 +17,13 @@
     uv
     clang
     rustup
+    rustc
+    cargo
     gcc
     openssl
     godot
     lazygit
+    direnv
 
     # Version control and development tools
     git
@@ -151,6 +154,7 @@
 
     # Education
     wireshark
+    blockbench
 
     # Music and streaming
     pear-desktop

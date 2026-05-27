@@ -69,12 +69,13 @@
           ./modules/nix-config.nix
           ./modules/hardware-configuration.nix
           ./modules/vm-guest-services.nix
+          # ./modules/local-hardware-clock.nix
 
           # Drivers (change for your system)
           ./modules/nvidia-drivers.nix
-          # ./nvidia-prime-drivers.nix # uncomment for laptop
-          #./intel-drivers.nix
-          #./amd-drivers.nix
+          # .modules/nvidia-prime-drivers.nix # uncomment for laptop
+          #.modules/intel-drivers.nix
+          #.modules/amd-drivers.nix
         ];
       };
     };
